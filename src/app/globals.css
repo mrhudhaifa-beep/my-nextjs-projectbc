@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  --bg-deep: #050507;
+  --bg-card: rgba(18, 18, 24, 0.7);
+  --gold-primary: #d4af37;
+  --gold-light: #f3e5ab;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+  --text-primary: #f4f1ea;
+  --text-muted: #a3a19b;
+  --rose-subtle: #3d272a;
+}
+
+@theme {
+  --color-gold-primary: #d4af37;
+  --color-gold-light: #f3e5ab;
+  --color-bg-deep: #050507;
+  --font-serif-arabic: var(--font-amiri), serif;
+  --font-sans-arabic: var(--font-alexandria), sans-serif;
+}
+
+html,
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-alexandria), sans-serif;
+  overflow-x: hidden;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Custom Typography Utility */
+.font-serif-arabic {
+  font-family: var(--font-amiri), serif;
+}
+
+.font-sans-arabic {
+  font-family: var(--font-alexandria), sans-serif;
+}
+
+/* Glassmorphism Card */
+.glass-panel {
+  background: rgba(15, 15, 22, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-gold {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.15) 0%,
+    rgba(15, 15, 22, 0.8) 100%
+  );
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.25);
+}
+
+/* Gold Text Gradient */
+.text-gold-gradient {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f3e5ab 35%,
+    #d4af37 70%,
+    #aa820a 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+/* 3D Perspective Envelope Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+/* Scrollbar refinement */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050507;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+/* Selection */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #ffffff;
+}
